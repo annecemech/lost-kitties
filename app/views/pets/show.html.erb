@@ -1,0 +1,5 @@
+<h1 class="py-3"><%= @pet.name %> - <%= @pet.species %></h1>
+<p class="alert alert-secondary"><%= @pet.address %></p>
+<p>Trouvé(e) il y a <span class="badge bg-secondary"><%= @pet.found_days_ago %> jour(s)</span></p>
+<%= link_to "Mettre à jour", edit_pet_path(@pet), class: 'btn btn-primary'  %>
+<%= link_to "Animal rendu à son propriétaire", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Vraiment??"}, class: 'btn btn-danger'  %>

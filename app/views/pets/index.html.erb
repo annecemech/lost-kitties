@@ -1,0 +1,7 @@
+<h1 class="py-3">Mes animaux trouvés</h1>
+<ul class="list-group">
+  <% @pets.each do |pet| %>
+  <li class="list-group-item"><%= link_to pet.name, pet_path(pet) %> - Trouvé(e) il y a <span class="badge bg-secondary"><%= pet.found_days_ago %> jour(s)</span></li>
+  <% end %>
+</ul>
+<%= link_to "Ajouter un animal", new_pet_path, class: 'btn btn-primary mt-3'  %>
